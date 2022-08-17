@@ -1,6 +1,7 @@
 const certas = document.querySelector('#Certas');
 const erradas = document.querySelector('#Erradas');
 const pa = document.querySelector('#PA');
+localStorage.removeItem("numeroQ");
 
 const acertos = sessionStorage.getItem('acertos');
 const erros = sessionStorage.getItem('erros');

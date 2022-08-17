@@ -4,6 +4,7 @@ const ndp = document.querySelector('#NDP');
 const containerOPT = document.querySelector('#containerOPT');
 const resposta = document.querySelector('#Resposta');
 const cadastrar = document.querySelector('#cadastrar');
+localStorage.removeItem("numeroQ");
 let nop = 0;
 
 const bufferLocal = localStorage.getItem('StorageQuests');

@@ -1,9 +1,8 @@
 let acertos = 0, erros = 0;
 let perguntaAtualID = 1;
-sessionStorage.clear();
+let numeroQ = localStorage.getItem("numeroQ");
+localStorage.removeItem("numeroQ");
 var perguntas = PegarPerguntas();
-console.log(perguntas);
-
 const processedNums = [];
 let perguntaAtual = NewNumber();
 
@@ -11,7 +10,7 @@ const botao = document.querySelector('#botaoEnviar');
 
 function PegarPerguntas(){
     let bufferStorage = JSON.parse(localStorage.getItem('StorageQuests'));
-    if(bufferStorage == null){
+    if(bufferStorage == null || numeroQ == null){
         alert('Nenhuma Pergunta Cadastrada');
         location = './index.html';
         return [];
@@ -20,7 +19,7 @@ function PegarPerguntas(){
 }
 
 function MostrarPergunta(){
-    document.querySelector('#pergunta').innerHTML = "PERGUNTA " + (perguntaAtualID);
+    document.querySelector('#perguntal').innerHTML = "PERGUNTA " + (perguntaAtualID);
     document.querySelector('#enunciado').innerHTML = perguntas[perguntaAtual].enunciado;
     let Respostas = "<ul>";
     for(let i = 0; i < perguntas[perguntaAtual].opcoes.length; i++){
@@ -73,7 +72,7 @@ function ConfirmarResposta(){
                 document.querySelector(('#respostaLabel'+index)).style.backgroundColor = 'red';
                 document.querySelector(('#respostaLabel'+perguntas[perguntaAtual].indexCerto)).style.backgroundColor = 'green';
             }
-            if(perguntaAtualID == perguntas.length){
+            if(perguntaAtualID == numeroQ){
             botao.setAttribute('onclick', 'MandarResultados()');
             botao.textContent = "Ver Resualtados";
             }
@@ -111,7 +110,7 @@ function NewNumber()
 {
     let buffer;
     do{
-        buffer = Math.floor(Math.random()*perguntas.length);
+        buffer = Math.floor(Math.random()*numeroQ +1);
     }
     while(processedNums.includes(buffer));
     processedNums.push(buffer);
