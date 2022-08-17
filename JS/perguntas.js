@@ -110,7 +110,7 @@ function NewNumber()
 {
     let buffer;
     do{
-        buffer = Math.floor(Math.random()*numeroQ +1);
+        buffer = Math.floor(Math.random()*numeroQ);
     }
     while(processedNums.includes(buffer));
     processedNums.push(buffer);
