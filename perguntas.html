@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="CSS/notes.ico">
-    <link rel="stylesheet" href="CSS/main.css">
-    <link rel="stylesheet" href="CSS/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="CSS/notes.ico" />
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link rel="stylesheet" href="CSS/index.css" />
     <title>Quiz</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="background-image"></div>
     <div id="container">
-        <div id="pergunta">
-            <a href="/Q_and_A_JS/">
-                <img src="CSS/home.png" alt="error">
-            </a>
-            <h1 class="unselectable" id="perguntal">RESULTADOS</h1>
-        </div>
-        <h2 id="enunciado" class="unselectable" style="padding-top: 1.5vh;"></h2> 
-        <div id="respostas">
-        </div>
-        <button class="unselectable" id="botaoEnviar" onclick="ConfirmarResposta()">CONFIRM</button>
+      <div id="pergunta">
+        <a href="/Q_and_A_JS/">
+          <img src="CSS/home.png" alt="error" />
+        </a>
+        <h1 class="unselectable" id="perguntal">RESULTADOS</h1>
+      </div>
+      <h2 id="enunciado" class="unselectable" style="padding-top: 1.5vh"></h2>
+      <div id="respostas"></div>
+      <button
+        class="unselectable"
+        id="botaoEnviar"
+        onclick="ConfirmarResposta()"
+      >
+        CONFIRM
+      </button>
     </div>
     <script src="JS/perguntas.js"></script>
-</body>
+  </body>
 </html>
